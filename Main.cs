@@ -1,10 +1,6 @@
-﻿using System;
+﻿using MelonLoader;
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MelonLoader;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,25 +9,29 @@ namespace MicDotRecolour
     internal class Main : MelonMod
     {
         public static bool RGBToggle = false;
+
         public override void OnApplicationStart()
         {
             Modules.Prefs.InitPrefs();
             MelonCoroutines.Start(StartUserInterfaceInitIEnumerator());
         }
+
         public override void OnPreferencesSaved()
         {
             if (GameObject.Find("UserInterface") == null) return;
             Icon();
         }
+
         internal static IEnumerator StartUserInterfaceInitIEnumerator()
         {
             while (GameObject.Find("UserInterface") == null) yield return null;
             Modules.ModLog.Msg(ConsoleColor.Yellow, "[Info] User Interface Found! Starting Mic Dot Recolour!");
             Icon();
         }
+
         public static void Icon()
         {
-            if(Modules.Prefs.MicRgb.Value == true)
+            if (Modules.Prefs.MicRgb.Value == true)
             {
             }
             else
@@ -40,6 +40,7 @@ namespace MicDotRecolour
                 Modules.ModLog.Msg(ConsoleColor.Yellow, "[Info] Mic Dot Has Been Recoloured!");
             }
         }
+
         public override void OnUpdate()
         {
             while (GameObject.Find("UserInterface") == null) return;

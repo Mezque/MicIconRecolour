@@ -1,7 +1,7 @@
-﻿using System.Reflection;
-using MelonLoader;
-using System.Runtime.InteropServices;
+﻿using MelonLoader;
 using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("MicDotRecolour")]
 [assembly: AssemblyDescription("A Melonloader mod for vrchat to recolour the mic dot")]

@@ -1,5 +1,4 @@
 ﻿using MelonLoader;
-using UnityEngine;
 
 namespace MicDotRecolour.Modules
 {
@@ -15,6 +14,7 @@ namespace MicDotRecolour.Modules
             MicRgb = MDR.CreateEntry<bool>("Mic RGB", false, "Toggle for rgb mode");
             MelonLoader.MelonPreferences.Save();
         }
+
         internal static MelonPreferences_Category MDR;
         internal static MelonPreferences_Entry<string> MicColourR;
         internal static MelonPreferences_Entry<string> MicColourG;
