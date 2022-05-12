@@ -10,11 +10,11 @@ namespace MicDotRecolour
         private static bool UIManagerInitialized = false;
         private static Image muteIcon;
         private static GameObject goVoiceDotMuted;
+
         public override void OnPreferencesSaved()
         {
             if (UIManagerInitialized && Modules.Prefs.MicRgb.Value)
             {
-
                 Modules.ModLog.Msg(ConsoleColor.Yellow, "[Info] Recoloring microphone icon");
                 muteIcon.color = new(float.Parse(Modules.Prefs.MicColourR.Value) / 255f, float.Parse(Modules.Prefs.MicColourG.Value) / 255f, float.Parse(Modules.Prefs.MicColourB.Value) / 255f, float.Parse(Modules.Prefs.MicColourA.Value) / 255f);
                 goVoiceDotMuted.transform.localScale = new Vector3(Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value);
