@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("Mezque")]
 [assembly: AssemblyCulture("")]
-[assembly: MelonInfo(typeof(MicDotRecolour.Main), "MicDotRecolour", $"{MicDotRecolourVerion.Version}", "Mezque", "https://github.com/Mezque/MicDotRecolour/releases/latest/download/MicDotRecolour.dll")]
+[assembly: MelonInfo(typeof(MicDotRecolour.Main), "MicDotRecolour", $"{MicDotRecolourVerion.Version}", "Mezque", "https://github.com/Mezque/MicDotRecolour/releases/latest/download/MLMicDotRecolour.dll")]
 [assembly: MelonGame("VRChat", "VRChat")]
 [assembly: MelonColor(ConsoleColor.Blue)]
 [assembly: ComVisible(false)]
@@ -20,5 +20,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion($"{MicDotRecolourVerion.Version}")]
 internal struct MicDotRecolourVerion
 {
-    internal const string Version = "1.2.1.0";
+    internal const string Version = "1.2.1.1";
 }
