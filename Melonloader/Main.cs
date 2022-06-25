@@ -11,6 +11,7 @@ namespace MicDotRecolour
         private static Image muteIcon;
         private static GameObject goVoiceDotMuted;
 
+        public override void OnApplicationStart() => Modules.UpdateNotice.UpdateCheck();
         public override void OnPreferencesSaved()
         {
             if (UIManagerInitialized && Modules.Prefs.MicRgb.Value)
