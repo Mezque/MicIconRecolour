@@ -8,8 +8,8 @@ namespace MicDotRecolour
     internal class Main : MelonMod
     {
         private static bool UIManagerInitialized = false;
-        private static Image muteIcon;
-        private static GameObject goVoiceDotMuted;
+        private static Image muteIcon, talkIcon;
+        private static GameObject goVoiceDotMuted, goVoiceDotTalking;
 
         public override void OnApplicationStart() => Modules.UpdateNotice.UpdateCheck();
         public override void OnPreferencesSaved()
@@ -19,6 +19,7 @@ namespace MicDotRecolour
                 Modules.ModLog.Msg(ConsoleColor.Yellow, "[Info] Recoloring microphone icon");
                 muteIcon.color = new(float.Parse(Modules.Prefs.MicColourR.Value) / 255f, float.Parse(Modules.Prefs.MicColourG.Value) / 255f, float.Parse(Modules.Prefs.MicColourB.Value) / 255f, float.Parse(Modules.Prefs.MicColourA.Value) / 255f);
                 goVoiceDotMuted.transform.localScale = new Vector3(Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value);
+                goVoiceDotTalking.transform.localScale = new Vector3(Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value);
             }
         }
 
@@ -30,8 +31,10 @@ namespace MicDotRecolour
 
         private static void Setup()
         {
-            goVoiceDotMuted = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDot").gameObject;
+            goVoiceDotMuted = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDotDisabled").gameObject;
             muteIcon = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDotDisabled").GetComponent<Image>();
+            goVoiceDotTalking = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDot").gameObject;
+            talkIcon = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDot").GetComponent<Image>();
             UIManagerInitialized = true;
         }
 
