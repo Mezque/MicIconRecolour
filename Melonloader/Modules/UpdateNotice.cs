@@ -32,16 +32,23 @@ namespace MicDotRecolour.Modules
             {
                 Modules.ModLog.Warn($"Unable to check for mod update \n{ex}");
             }
-            string CurModHash = ComputeHash(sha, DllCur);
-            string UpdateModHash = ComputeHash(sha, DLLupdate);
+            try
+            {
+                string CurModHash = ComputeHash(sha, DllCur);
+                string UpdateModHash = ComputeHash(sha, DLLupdate);
 
-            if (CurModHash != UpdateModHash)
-            {
-                Modules.ModLog.Warn($"There Is A Mod Update Available At:\n {gitURL}\n Certan Features May NOT Work Until You Update!");
+                if (CurModHash != UpdateModHash)
+                {
+                    Modules.ModLog.Warn($"There Is A Mod Update Available At:\n {gitURL}\n Certan Features May NOT Work Until You Update!");
+                }
+                else
+                {
+                    Modules.ModLog.Msg(ConsoleColor.White, "[INFO] No Updates Available :)");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Modules.ModLog.Msg(ConsoleColor.White, "[INFO] No Updates Available :)");
+                Modules.ModLog.Warn($"Failed To Check For Updates:\n{ex}");
             }
         }
 
