@@ -30,7 +30,7 @@ namespace MicDotRecolour
 
         private static void Setup()
         {
-            goVoiceDotMuted = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDotDisabled").gameObject;
+            goVoiceDotMuted = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDot").gameObject;
             muteIcon = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDotDisabled").GetComponent<Image>();
             UIManagerInitialized = true;
         }
