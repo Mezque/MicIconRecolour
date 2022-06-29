@@ -11,7 +11,10 @@ namespace MicDotRecolour
         private static Image muteIcon, talkIcon;
         private static GameObject goVoiceDotMuted, goVoiceDotTalking;
 
-        public override void OnApplicationStart() => Modules.UpdateNotice.UpdateCheck();
+        public override void OnApplicationStart()
+        {
+            Modules.UpdateNotice.UpdateCheck();
+        }
         public override void OnPreferencesSaved()
         {
             if (UIManagerInitialized && Modules.Prefs.MicRgb.Value)
@@ -20,13 +23,34 @@ namespace MicDotRecolour
                 muteIcon.color = new(float.Parse(Modules.Prefs.MicColourR.Value) / 255f, float.Parse(Modules.Prefs.MicColourG.Value) / 255f, float.Parse(Modules.Prefs.MicColourB.Value) / 255f, float.Parse(Modules.Prefs.MicColourA.Value) / 255f);
                 goVoiceDotMuted.transform.localScale = new Vector3(Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value);
                 goVoiceDotTalking.transform.localScale = new Vector3(Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value, Modules.Prefs.Scale.Value);
+                Visability();
             }
         }
 
+        private static void Visability()
+        {
+            if (Modules.Prefs.ToggleMuteIconVisable.Value == false)
+            {
+                goVoiceDotMuted.active = false;
+            }
+            else
+            {
+                goVoiceDotMuted.active = true;
+            }
+            if (Modules.Prefs.ToggleSpeakIconVisable.Value == false)
+            {
+                goVoiceDotTalking.active = false;
+            }
+            else
+            {
+                goVoiceDotTalking.active = true;
+            }
+        }
         public override void OnSceneWasLoaded(int index, string _)
         {
             if (index == 1)
                 Setup();
+                
         }
 
         private static void Setup()
@@ -36,6 +60,7 @@ namespace MicDotRecolour
             goVoiceDotTalking = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDot").gameObject;
             talkIcon = GameObject.Find("UserInterface").transform.Find("UnscaledUI/HudContent_Old/Hud/VoiceDotParent/VoiceDot").GetComponent<Image>();
             UIManagerInitialized = true;
+            Visability();
         }
 
         public override void OnUpdate()
