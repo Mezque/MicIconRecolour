@@ -17,7 +17,7 @@ namespace MicDotRecolour
         }
         public override void OnPreferencesSaved()
         {
-            if (UIManagerInitialized && Modules.Prefs.MicRgb.Value)
+            if (UIManagerInitialized)
             {
                 Modules.ModLog.Msg(ConsoleColor.Yellow, "[Info] Recoloring microphone icon");
                 muteIcon.color = new(float.Parse(Modules.Prefs.MicColourR.Value) / 255f, float.Parse(Modules.Prefs.MicColourG.Value) / 255f, float.Parse(Modules.Prefs.MicColourB.Value) / 255f, float.Parse(Modules.Prefs.MicColourA.Value) / 255f);
@@ -46,6 +46,13 @@ namespace MicDotRecolour
                 goVoiceDotTalking.active = true;
             }
         }
+
+        private static void GrayscaledMicIcon()
+        {
+
+
+        }
+
         public override void OnSceneWasLoaded(int index, string _)
         {
             if (index == 1)
