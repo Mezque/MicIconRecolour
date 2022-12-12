@@ -1,7 +1,5 @@
 ﻿using MelonLoader;
 using System;
-using System.Linq;
-using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +20,6 @@ namespace MicIconRecolour
                 Visability();
             }
         }
-
         private static void Visability()
         {
             if (Modules.Prefs.ToggleMuteIconVisable.Value == false)
