@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MicDotRecolour.Modules
 {
-    internal class UpdateNotice
+    internal class UpdateNotice // going to remove soon and move this function into its own plugin for mods created by me.
     {
         internal static void UpdateCheck()
         {
