@@ -1,6 +1,6 @@
 ﻿using MelonLoader;
 
-namespace MicDotRecolour.Modules
+namespace MicIconRecolour.Modules
 {
     internal class Prefs
     {

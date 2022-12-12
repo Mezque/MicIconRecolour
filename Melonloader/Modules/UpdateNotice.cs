@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MicDotRecolour.Modules
+namespace MicIconRecolour.Modules
 {
     internal class UpdateNotice // going to remove soon and move this function into its own plugin for mods created by me.
     {

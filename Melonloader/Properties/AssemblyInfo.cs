@@ -3,7 +3,7 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("MicDotRecolour")]
+[assembly: AssemblyTitle("MicIconRecolour")]
 [assembly: AssemblyDescription("A Melonloader mod for vrchat to recolour the mic dot")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mezque")]
@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("Mezque")]
 [assembly: AssemblyCulture("")]
-[assembly: MelonInfo(typeof(MicDotRecolour.Main), "MicDotRecolour", $"{MicDotRecolourVerion.Version}", "Mezque", "https://github.com/Mezque/MicDotRecolour/releases/latest/download/MLMicDotRecolour.dll")]
+[assembly: MelonInfo(typeof(MicIconRecolour.Main), "MicDotRecolour", $"{MicDotRecolourVerion.Version}", "Mezque", "https://github.com/Mezque/MicDotRecolour/releases/latest/download/MLMicDotRecolour.dll")]
 [assembly: MelonGame("VRChat", "VRChat")]
 [assembly: MelonColor(ConsoleColor.Blue)]
 [assembly: ComVisible(false)]

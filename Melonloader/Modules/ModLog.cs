@@ -1,7 +1,7 @@
 ﻿using MelonLoader;
 using System;
 
-namespace MicDotRecolour.Modules
+namespace MicIconRecolour.Modules
 {
     internal static class ModLog
     {

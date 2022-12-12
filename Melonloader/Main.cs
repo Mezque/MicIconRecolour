@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MicDotRecolour
+namespace MicIconRecolour
 {
     internal class Main : MelonMod
     {
