@@ -20,5 +20,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion($"{MicDotRecolourVerion.Version}")]
 internal struct MicDotRecolourVerion
 {
-    internal const string Version = "1.2.1.7";
+    internal const string Version = "2.0.0";
 }
